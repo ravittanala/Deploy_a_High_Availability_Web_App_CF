@@ -4,17 +4,17 @@ This project focuses on Infrastructure as Code (IAC)
 
 Supporting Files:
 
--> Create.sh (A simplified Shell script to create a Stack)
+-> Create_Stack.sh (A simplified Shell script to create a Stack)
  Format: Create.sh <Stack Name> <Template body(Yaml file)> <Parameter file(json file)>
-  e.g. Create.sh High-Availability-Web-App ICA-INFRA-SERVERS.yml PARAMETERS.json 
+  e.g. Create_Stack.sh High-Availability-Web-App ICA-INFRA-SERVERS.yml PARAMETERS.json 
  
 The Actual CLI for the above one is:
 
 aws cloudformation create-stack --stack-name High-Availability-Web-App --template-body file://ICA-INFRA-SERVERS.yml --parameters PARAMETERS.json --region us-west-2 --capability CAPABILITY_IAM
 
--> Update.sh (A simplified Shell script to update an existing Stack)
+-> Update_Stack.sh (A simplified Shell script to update an existing Stack)
  Format: Update.sh <Stack Name> <Template body(Yaml file)> <Parameter file(json file)>
-  e.g. Update.sh High-Availability-Web-App ICA-INFRA-SERVERS.yml PARAMETERS.json 
+  e.g. Update_Stack.sh High-Availability-Web-App ICA-INFRA-SERVERS.yml PARAMETERS.json 
 
 
 The Actual CLI for the above one is:
@@ -22,9 +22,9 @@ The Actual CLI for the above one is:
 aws cloudformation update-stack --stack-name High-Availability-Web-App --template-body file://ICA-INFRA-SERVERS.yml --parameters PARAMETERS.json --region us-west-2 --capability CAPABILITY_IAM
 
 
--> delete.sh (A simplified Shell script to delete an existing Stack)
+-> Delete_Stack.sh (A simplified Shell script to delete an existing Stack)
  Format: delete.sh <Stack Name> 
-  e.g. delete.sh High-Availability-Web-App 
+  e.g. Delete_Stack.sh High-Availability-Web-App 
   
 Resources :
 
@@ -34,7 +34,7 @@ VPC: Amazon Virtual Private Cloud (Amazon VPC) enables you to launch AWS resourc
 
 EC2 instance: Amazon Elastic Compute Cloud (Amazon EC2) is a web service that provides secure, resizable compute capacity in the cloud. It is designed to make web-scale cloud computing easier for developers. Amazon EC2’s simple web service interface allows you to obtain and configure capacity with minimal friction. It provides you with complete control of your computing resources and lets you run on Amazon’s proven computing environment. Amazon EC2 reduces the time required to obtain and boot new server instances to minutes, allowing you to quickly scale capacity, both up and down, as your computing requirements change. Amazon EC2 changes the economics of computing by allowing you to pay only for capacity that you actually use. Amazon EC2 provides developers the tools to build failure resilient applications and isolate them from common failure scenarios.
 
-Bastion Host: If you do need to connect directly to instances, it's best (and for instances in a private subnets, a requirement) to use a bastion host, otherwise known as a jump box. A bastion host is an EC2 instance that is publicly accessible, and also has access to private resources, allowing it to function as a secure go-between. You configure your EC2 instances to only accept ssh traffic from the bastion host, then you can ssh into the bastion host, and from there connect to your private resources.
+Bastion Host: If you do need to connect directly to instances, it's best (and for instances in a private subnets) to use a bastion host, otherwise known as a jump box. A bastion host is an EC2 instance that is publicly accessible, and also has access to private resources, allowing it to function as a secure go-between. You configure your EC2 instances to only accept ssh traffic from the bastion host, then you can ssh into the bastion host, and from there connect to your private resources.
 
 NAT Gateway: You can use a network address translation (NAT) gateway to enable instances in a private subnet to connect to the internet or other AWS services, but prevent the internet from initiating a connection with those instances. NAT gateways are not supported for IPv6 traffic—use an egress-only internet gateway instead.
 
