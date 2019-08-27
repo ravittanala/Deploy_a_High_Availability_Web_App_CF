@@ -375,7 +375,7 @@ Resources:
             ImageId: ami-06f2f779464715dc5
             IamInstanceProfile:
                 Ref: S3BucketInstanceProfile
-            InstanceType: t2.micro
+            InstanceType: t3.small
             BlockDeviceMappings:
                 - DeviceName: "/dev/sda1"
                   Ebs:
