@@ -286,8 +286,8 @@ Resources:
             SecurityGroupIngress:
                 - CidrIp: 0.0.0.0/0
                   IpProtocol: tcp
-                  FromPort: 22
-                  ToPort: 22
+                  FromPort: 80
+                  ToPort: 80
             Tags:
                 -   Key: Name
                     Value: !Sub ${EnvironmentName}-bastion-sg
@@ -375,7 +375,7 @@ Resources:
             ImageId: ami-06f2f779464715dc5
             IamInstanceProfile:
                 Ref: S3BucketInstanceProfile
-            InstanceType: t2.micro
+            InstanceType: t3.small
             BlockDeviceMappings:
                 - DeviceName: "/dev/sda1"
                   Ebs:
