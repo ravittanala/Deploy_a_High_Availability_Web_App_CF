@@ -379,7 +379,7 @@ Resources:
             BlockDeviceMappings:
                 - DeviceName: "/dev/sda1"
                   Ebs:
-                      VolumeSize: '64'
+                      VolumeSize: '20'
                       VolumeType: gp2
             SecurityGroups:
                 - Ref: WebSecurityGroup
